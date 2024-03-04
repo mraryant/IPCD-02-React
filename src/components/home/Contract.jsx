@@ -1,11 +1,11 @@
- 
-import   { useState } from "react";
+
+import { useState } from "react";
 import { motion } from "framer-motion"
- 
+
 
 const Contract = () => {
     const [copied, setCopied] = useState(false);
-    const text = "0xc755377CD13ca4BedB87EED8D2C5105d46FFC3";
+    const text = "0xA9571453510Ca6464C5B90d9D47c402811033199";
 
     const handleCopy = () => {
         navigator.clipboard
@@ -69,7 +69,7 @@ const Contract = () => {
                             style={{ width: "230px" }}
                             onClick={() =>
                                 window.open(
-                                    "#",
+                                    "https://bscscan.com/address/0xa9571453510ca6464c5b90d9d47c402811033199#code",
                                     "_blank"
                                 )
                             }

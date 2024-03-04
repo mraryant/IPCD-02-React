@@ -273,8 +273,8 @@ body {
 
 /* Apply styles to selected text */
 ::selection {
-  background-color: #bab10735;
-  color: rgb(242, 242, 46); /* Text color for selected text */
+  background-color: #fbf354dc;
+  color: black /* Text color for selected text */
 }
 
 /* Additional styling for other browsers */
