@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Listing = () => {
     // typing effect  p tag
- 
+
 
     return (
         <>
@@ -19,15 +19,15 @@ const Listing = () => {
                     <div id="listed-left" className='max-w-[50%] flex flex-col justify-center gap-[1vmax] max-[700px]:max-w-[100%] ' >
                         <h1 className='oxanium text-5xl'>We Are <span className='text-[var(--prime-yellow)]'>Listed</span>  On</h1>
                         <motion.p
-                         
+
                             className='text-xl leading-tight'
                         // className="leading-tight text-gray-200 text-[18px] w-[80%] tracking-[0.35px] max-[850px]:w-[100%]"
                         >
-                            
-                                <motion.span  >
-                                    IPCD aims to redefine people management globally, setting gold standards in HR, learning, and organizational development, with the IPCD Token, grounded in blockchain, as a catalyst for transformative success.
-                                </motion.span>
-                            
+
+                            <motion.span  >
+                                IPCD aims to redefine people management globally, setting gold standards in HR, learning, and organizational development, with the IPCD Token, grounded in blockchain, as a catalyst for transformative success.
+                            </motion.span>
+
                         </motion.p>
                         {/* <p>IPCD aims to redefine people management globally, setting gold standards in HR, learning, and organizational development, with the IPCD Token, grounded in blockchain, as a catalyst for transformative success.</p> */}
                     </div>
@@ -75,25 +75,24 @@ const Listing = () => {
 
 
                 <div id="filler-main" className='flex w-full gap-10 max-[800px]:flex-col max-[800px]:items-center '>
-                    <div id="filler-left" className='w-[40%] flex max-[800px]:w-[80%] max-[800px]:justify-center '>
+                    <div id="filler-left" className='w-[50%] h-[100%] flex max-[800px]:w-[80%] max-[800px]:justify-center '>
                         <img
-                            src='/assets/bottomcross.svg'
+                            src='/assets/bottomcross.png'
                             alt='IPCD Logo'
-                            width={400}
-                            height={500}
+                            className=' w-[70%] h-[auto] '
                         />
                     </div>
                     <div id="filler-right" className=' w-[60%] flex flex-col justify-center items-center gap-10 max-[800px]:w-[100%] max-[800px]: '>
                         <h1 className='text-5xl oxanium max-[800px]:text-4xl  '> <span className='text-[var(--prime-yellow)]' >INSTITUTE</span> OF PERSONNEL AND CORPORATE <span className='text-[var(--prime-yellow)]'>DEVELOPMENT</span> </h1>
                         <motion.p
-                            
+
                             className="text-xl max-[800px]:text-justify"
                         >
-                            
-                                <motion.span  >
-                                    IPCD envisions a future of holistic well-being, strategic alignment, and innovation in global people management. The IPCD Token symbolizes a secure, borderless, and collaborative approach to reshaping the future of work.
-                                </motion.span>
-                            
+
+                            <motion.span  >
+                                IPCD envisions a future of holistic well-being, strategic alignment, and innovation in global people management. The IPCD Token symbolizes a secure, borderless, and collaborative approach to reshaping the future of work.
+                            </motion.span>
+
                         </motion.p>
                         {/* <p className='text-xl max-[800px]:text-justify'>IPCD envisions a future of holistic well-being, strategic alignment, and innovation in global people management. The IPCD Token symbolizes a secure, borderless, and collaborative approach to reshaping the future of work.</p> */}
                     </div>
