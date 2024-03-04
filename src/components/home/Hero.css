@@ -1,0 +1,15 @@
+ 
+.video {
+  width: 100%;
+  object-fit: cover;
+  height: 100% !important;
+  display: flex;
+  /* z-index: -1; */
+  position: absolute;
+  opacity: 0.7;
+  right: 0%;
+}
+.text-stroke {
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+  color: transparent; /* Set the text color */
+}

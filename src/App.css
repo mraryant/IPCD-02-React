@@ -1,0 +1,522 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --prime-yellow: #f8a00a;
+  --curve-size: 1em;
+  --curve-size2: 5em;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  overflow-x: hidden;
+  font-family: "Montserrat";
+  /* font-family: Oxanium; */
+  /* font-family: , Arial, sans-serif; */
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Style the scrollbar handle or thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #333; /* Adjust the color as needed for your dark theme */
+  border-radius: 50px;
+}
+
+/* Style the scrollbar track on hover */
+::-webkit-scrollbar-track:hover {
+  background-color: #969494; /* Adjust the color on hover as needed */
+}
+
+/* Style the scrollbar handle or thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #3f3f3f; /* Adjust the color on hover as needed */
+}
+
+/* Style the scrollbar corner */
+::-webkit-scrollbar-corner {
+  background-color: #111; /* Adjust the color as needed for your dark theme */
+}
+
+.navcar {
+  position: relative;
+}
+@media (max-width: 767px) {
+  .navcar::before {
+    content: ""; /* Ensures the pseudo-element is generated */
+    position: absolute;
+    top: -15px;
+    left: 94%;
+    border-bottom: 15px solid #1f2937;
+    border-left: 15px solid transparent;
+
+    /* Add your styles for the ::before element here */
+    width: 10px;
+    height: 10px;
+    /* background-color: red; */
+  }
+}
+/* button styling */
+
+.btn {
+  --border-color: linear-gradient(-45deg, #ffcb72, #ba7807, #f7a00b);
+  --border-width: 0.125em;
+
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  /* color: var(--color); */
+  /* use position: relative; so that BG is only for .btn */
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: 0.5em 1.5em;
+  font-size: 16px;
+  text-wrap: nowrap;
+  border: 0;
+  min-width: 120px;
+  width: 10vmax;
+  height: 45px;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  clip-path: polygon(
+    /* Top-left */ 0% var(--curve-size),
+    var(--curve-size) 0,
+    /* top-right */ 100% 0,
+    100% calc(100% - var(--curve-size)),
+    /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+    /* bottom-right 2 */ 0 100%
+  );
+  transition: color 250ms;
+}
+
+.btn::after,
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.btn::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+.btn::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+    /* Top-left */ var(--border-width)
+      calc(var(--curve-size) + var(--border-width) * 0.5),
+    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+    /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    /* bottom-right 2 */ var(--border-width) calc(100% - var(--border-width))
+  );
+  transition: clip-path 500ms;
+}
+
+.btn:where(:hover, :focus)::after {
+  clip-path: polygon(
+    /* Top-left */ calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - var(--border-width)) var(--border-width),
+    /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    /* bottom-right 2 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width))
+  );
+  transition: 200ms;
+}
+
+.btn:where(:hover, :focus) {
+  color: #fff;
+}
+
+@keyframes move-bg7234 {
+  0% {
+    background-position: 31% 0%;
+  }
+
+  50% {
+    background-position: 70% 100%;
+  }
+
+  100% {
+    background-position: 31% 0%;
+  }
+}
+
+/* contract  css */
+
+#contract1 {
+  min-height: 30vh;
+  width: 100vw;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-size: cover;
+  position: relative;
+}
+#contract {
+  margin-top: 3vmax;
+  margin-bottom: 3vmax;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#contract > h5 {
+  z-index: 1;
+}
+#contract > h3 {
+  z-index: 1;
+  font-size: 1.9vmax;
+}
+#contract-button {
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+#conV {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  background-position: center;
+  width: 100%;
+  height: fit-content;
+  z-index: 1;
+}
+
+.oxanium {
+  font-family: "Oxanium";
+}
+.montserrat {
+  font-family: "Montserrat";
+}
+
+/* roadmap scrollbar styling  */
+
+#rc-right::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Style the scrollbar handle or thumb */
+#rc-right::-webkit-scrollbar-thumb {
+  background-color: #333; /* Adjust the color as needed for your dark theme */
+  border-radius: 50px;
+}
+
+/* Style the scrollbar track on hover */
+#rc-right::-webkit-scrollbar-track:hover {
+  background-color: #636262; /* Adjust the color on hover as needed */
+}
+
+/* Style the scrollbar handle or thumb on hover */
+#rc-right::-webkit-scrollbar-thumb:hover {
+  background-color: #3d3d3d; /* Adjust the color on hover as needed */
+}
+
+/* Style the scrollbar corner */
+#rc-right::-webkit-scrollbar-corner {
+  background-color: #111; /* Adjust the color as needed for your dark theme */
+}
+.text-gradient {
+  background: linear-gradient(to right, #ffad62, #ffffff);
+
+  color: transparent;
+  display: inline-block;
+}
+
+.gradient-distribution {
+  color: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(230, 193, 133, 1) 65%
+  );
+
+  color: transparent;
+  display: inline-block;
+}
+
+/* Apply styles to selected text */
+::selection {
+  background-color: #bab10735;
+  color: rgb(242, 242, 46); /* Text color for selected text */
+}
+
+/* Additional styling for other browsers */
+::-moz-selection {
+  color: rgb(255, 255, 0);
+}
+
+/* // popup 1  */
+#wa-popup::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 15px solid #efebe400;
+  border-right: 20px solid #ffffff; /*act*/
+  border-bottom: 15px solid #c2a77800;
+  border-left: 0px solid #d18706;
+  top: 46%;
+  left: -20px;
+}
+#wa-popup {
+  height: 370px;
+
+  background-color: white;
+  color: black;
+  display: flex;
+  overflow: auto;
+  padding: 20px;
+
+  border-radius: 15px;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  #wa-popup::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 15px solid #d8890000;
+    border-bottom: 20px solid #ffffff; /*act*/
+    border-right: 15px solid #ffffff00;
+    border-left: 15px solid #d1870600;
+    top: -14px;
+    left: 10%;
+    transform: translate(-50%, -50%);
+  }
+  #wa-popup {
+    height: 370px;
+    width: 100%;
+    background-color: white;
+    color: black;
+    display: flex;
+    overflow: auto;
+    padding: 20px;
+    bottom: 0;
+    border-radius: 15px;
+    flex-direction: column;
+  }
+}
+
+/* nav bar  buttons  */
+
+.btn1 {
+  --border-color: linear-gradient(-45deg, #ffcb72, #ba7807, #f7a00b);
+  --border-width: 0.125em;
+
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  /* color: var(--color); */
+  /* use position: relative; so that BG is only for .btn */
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: 0.5em 1.5em;
+  font-size: 16px;
+  text-wrap: nowrap;
+  border: 0;
+  min-width: 120px;
+  width: fit-content;
+  height: 45px;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  clip-path: polygon(
+    /* Top-left */ 0% var(--curve-size),
+    var(--curve-size) 0,
+    /* top-right */ 100% 0,
+    100% calc(100% - var(--curve-size)),
+    /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+    /* bottom-right 2 */ 0 100%
+  );
+  transition: color 250ms;
+}
+
+.btn1::after,
+.btn1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.btn1::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+.btn1::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+    /* Top-left */ var(--border-width)
+      calc(var(--curve-size) + var(--border-width) * 0.5),
+    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+    /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    /* bottom-right 2 */ var(--border-width) calc(100% - var(--border-width))
+  );
+  transition: clip-path 500ms;
+}
+
+.btn1:where(:hover, :focus)::after {
+  clip-path: polygon(
+    /* Top-left */ calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - var(--border-width)) var(--border-width),
+    /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    /* bottom-right 2 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width))
+  );
+  transition: 200ms;
+}
+
+.btn1:where(:hover, :focus) {
+  color: #fff;
+}
+
+@keyframes move-bg7234 {
+  0% {
+    background-position: 31% 0%;
+  }
+
+  50% {
+    background-position: 70% 100%;
+  }
+
+  100% {
+    background-position: 31% 0%;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn1 {
+    width: 100%;
+  }
+}
+
+/* loader styling  */
+.loader {
+  position: relative;
+  font-size: 16px;
+  width: 5.5em;
+  height: 5.5em;
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(45deg);
+  height: 100%;
+  width: 4px;
+  background: #fff;
+  left: 50%;
+  top: 50%;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  left: 0.2em;
+  bottom: 0.18em;
+  width: 1em;
+  height: 1em;
+  background-color: orange;
+  border-radius: 15%;
+  animation: rollingRock 2.5s cubic-bezier(0.79, 0, 0.47, 0.97) infinite;
+}
+
+@keyframes rollingRock {
+  0% {
+    transform: translate(0, -1em) rotate(-45deg);
+  }
+
+  5% {
+    transform: translate(0, -1em) rotate(-50deg);
+  }
+
+  20% {
+    transform: translate(1em, -2em) rotate(47deg);
+  }
+
+  25% {
+    transform: translate(1em, -2em) rotate(45deg);
+  }
+
+  30% {
+    transform: translate(1em, -2em) rotate(40deg);
+  }
+
+  45% {
+    transform: translate(2em, -3em) rotate(137deg);
+  }
+
+  50% {
+    transform: translate(2em, -3em) rotate(135deg);
+  }
+
+  55% {
+    transform: translate(2em, -3em) rotate(130deg);
+  }
+
+  70% {
+    transform: translate(3em, -4em) rotate(217deg);
+  }
+
+  75% {
+    transform: translate(3em, -4em) rotate(220deg);
+  }
+
+  100% {
+    transform: translate(0, -1em) rotate(-225deg);
+  }
+}
