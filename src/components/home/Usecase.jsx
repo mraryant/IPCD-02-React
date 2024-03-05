@@ -1,5 +1,5 @@
 
-import  { useState } from "react";
+import { useState } from "react";
 // import img from "next/img";
 import { motion } from "framer-motion"
 
@@ -103,6 +103,17 @@ const Usecase = () => {
                         >
                             <h2 className="text-3xl oxanium ">    <span className="text-[var(--prime-yellow)]">Reward</span> System    </h2>
                             <p className=" leading-tight ">The IPCD Utility Token streamlines corporate processes, serving as a digital medium for HR transactions. It enables seamless payment, smart contract execution, and access to data-driven insights, enhancing efficiency and transparency.  Working professional can supplementally evaluates the company cognate information shared by employees through rating system. IPCD would be the best platform for employees and working professional to apportion or acquire information about the any company which will availing in apprised decision. </p>
+                        </motion.div>
+
+                        <motion.div variants={childVariants}
+                            onMouseEnter={() =>
+                                handleMouseEnter("/assets/usecase6.png") // Set the img path for the first use case
+                            }
+                            onMouseLeave={handleMouseLeave}
+                            className=" flex flex-col gap-2 border-b-2 border-white pb-5"
+                        >
+                            <h2 className="text-3xl oxanium ">    <span className="text-[var(--prime-yellow)]">De-Fi</span>  lending platform    </h2>
+                            <p className=" leading-tight ">The IPCD token revolutionizes De-Fi lending, offering swift access to capital for diverse purposes. It empowers users to secure loans for training and upskilling, transforming the traditional lending landscape. IPCD serves as IOUs for universities, corporates, and training partners, proving to be a profitable investment with potential token value increase. Parents strategically investing in IPCD can benefit from future value appreciation, ensuring reduced costs for high-quality education. The IPCD token emerges as a versatile financial instrument, unlocking possibilities for both borrowers and investors. </p>
                         </motion.div>
 
                     </motion.div>

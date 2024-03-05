@@ -138,17 +138,19 @@ const Hero = () => {
                     variants={staggerVariants}
 
                     className="flex gap-2" >
-                    <motion.div
+                    <motion.a
+                      href="https://t.me/ipcdtoken"
+                      target="blank"
                       whileHover={{ scale: 1.3 }}
                       variants={childVariants}>
                       <img
                         className="rotate-[-90deg]"
-                        src=" /assets/facebook2.svg"
+                        src=" /assets/teligram.svg"
                         width={30}
                         height={30}
                         alt="Picture of the author"
                       />
-                    </motion.div>
+                    </motion.a>
 
                     <motion.div
                       whileHover={{ scale: 1.3 }}
